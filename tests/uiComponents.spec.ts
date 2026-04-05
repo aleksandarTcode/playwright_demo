@@ -216,8 +216,31 @@ test('datepicker', async({page}) => {
 })
 
 
+test('sliders', async({page}) => {
+    //update attribute
+    // const tempGauge = page.locator('[tabtitle="Temperature"] ngx-temperature-dragger circle')
+    // await tempGauge.evaluate( node => {
+    //     node.setAttribute('cx', '232.630') 
+    //     node.setAttribute('cy', '232.630')
+    // })
+    // await tempGauge.click()
+
+    //mouse movement
+    const tempBox = page.locator('[tabtitle="Temperature"] ngx-temperature-dragger')
+    await tempBox.scrollIntoViewIfNeeded() //to scroll page down 
+
+    const box = await tempBox.boundingBox() //create coordinates around this box
+    const x = box.x + box.width / 2 //to make starting point in the center of the bounding box
+    const y = box.y + box.height / 2
+    await page.mouse.move(x, y)
+    await page.mouse.down() //click left mouse click
+    await page.mouse.move(x + 100, y)
+    await page.mouse.move(x + 100, y + 100)
+    await page.mouse.up() //release mouse 
+
+    await expect(tempBox).toContainText('30')
 
 
-
+})
 
 
