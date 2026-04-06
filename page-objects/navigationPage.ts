@@ -3,7 +3,7 @@ import { Page } from "@playwright/test";
 export class NavigationPage {
 
     readonly page: Page
-    
+
     constructor(page: Page){
         this.page = page
     }
@@ -16,7 +16,6 @@ export class NavigationPage {
     async datepickerPage(){
         // await this.page.getByText('Forms').click()
         await this.selectGroupMenuItem('Forms')
-        // await this.page.waitForTimeout(1000)
         await this.page.getByText('Datepicker').click()
 
     }
