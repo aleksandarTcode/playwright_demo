@@ -1,16 +1,19 @@
 import { Page } from "@playwright/test";
+import { HelperBase } from "./helperBase";
 
-export class NavigationPage {
+export class NavigationPage extends HelperBase{
 
-    readonly page: Page
+    // readonly page: Page
 
     constructor(page: Page){
-        this.page = page
+        // this.page = page
+        super(page)
     }
 
     async formLayoutsPage(){
         await this.selectGroupMenuItem('Forms') //checks if Forms is expanded or collapsed
         await this.page.getByText('Form Layouts').click()
+        await this.waitForNumberOfSeconds(2)
     }
 
     async datepickerPage(){
