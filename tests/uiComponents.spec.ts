@@ -1,6 +1,8 @@
 import {test, expect} from '@playwright/test';
 import { using } from 'rxjs';
 
+// test.describe.configure({mode:'parallel'}) //only this test file will be executed parallel
+
 test.beforeEach(async ({page}) => {
     await page.goto('http://localhost:4200/');
     
@@ -10,6 +12,7 @@ test.beforeEach(async ({page}) => {
 test.describe('Form Layouts page', () => {
 
     // test.describe.configure({retries: 2})
+    // test.describe.configure({mode: "serial"}) //if first test 'input fields' fails second one 'radio buttons' will not be executed
 
     test.beforeEach(async ({page}) => {
         await page.getByText('Forms').click()
