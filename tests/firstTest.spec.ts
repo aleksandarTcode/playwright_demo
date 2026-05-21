@@ -5,7 +5,7 @@ import { PLATFORM_INITIALIZER } from '@angular/core';
 
 
 test.beforeEach(async ({page}) => {
-    await page.goto('http://localhost:4200/');
+    await page.goto('/');
     await page.getByText('Forms').click();
     await page.getByText('Form Layouts').click()
 

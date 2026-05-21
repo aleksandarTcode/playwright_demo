@@ -4,7 +4,7 @@ import { using } from 'rxjs';
 // test.describe.configure({mode:'parallel'}) //only this test file will be executed parallel
 
 test.beforeEach(async ({page}) => {
-    await page.goto('http://localhost:4200/');
+    await page.goto('/');
     
 })
 
