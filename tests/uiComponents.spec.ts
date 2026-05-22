@@ -9,7 +9,7 @@ test.beforeEach(async ({page}) => {
 })
 
 
-test.describe('Form Layouts page', () => {
+test.describe('Form Layouts page @block', () => {
 
     // test.describe.configure({retries: 2})
     // test.describe.configure({mode: "serial"}) //if first test 'input fields' fails second one 'radio buttons' will not be executed
