@@ -49,7 +49,7 @@ export default defineConfig<TestOptions>({
     // actionTimeout: 5000,
     navigationTimeout: 5000,
     video: {
-      mode: 'on',
+      mode: 'off',
       size: {width: 1920, height: 1080}
     }
   },
