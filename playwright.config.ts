@@ -23,7 +23,8 @@ export default defineConfig<TestOptions>({
   // globalTimeout: 60000,
 
   // expect: {
-  //   timeout: 2000
+  //   timeout: 2000,
+  //   toHaveScreenshot: {maxDiffPixels: 50}
   // },
 
   testDir: './tests',
