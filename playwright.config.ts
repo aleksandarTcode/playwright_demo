@@ -33,7 +33,7 @@ export default defineConfig<TestOptions>({
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
-  retries: process.env.CI ? 2 : 1,
+  retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
@@ -52,7 +52,7 @@ export default defineConfig<TestOptions>({
     trace: 'on-first-retry',
 
     // actionTimeout: 5000,
-    navigationTimeout: 5000,
+    navigationTimeout: 30000,
     video: {
       mode: 'off',
       size: {width: 1920, height: 1080}
@@ -123,9 +123,9 @@ export default defineConfig<TestOptions>({
   ],
 
   /* Run your local dev server before starting the tests */
-  // webServer: {
-  //   command: 'npm run start',
-  //   url: 'http://localhost:3000',
-  //   reuseExistingServer: !process.env.CI,
-  // },
+  webServer: {
+    command: 'npm run start',
+    url: 'http://localhost:4200',
+    // reuseExistingServer: !process.env.CI,
+  },
 });
